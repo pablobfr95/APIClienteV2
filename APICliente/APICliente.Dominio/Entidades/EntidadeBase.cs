@@ -4,7 +4,7 @@ using System.Text;
 
 namespace APICliente.Dominio.Entidades
 {
-    public class EntidadeBase
+    public abstract class EntidadeBase
     {
         public int Id { get; set; }
     }

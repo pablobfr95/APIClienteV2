@@ -65,3 +65,9 @@ APICliente/APICliente.Infra.Data/bin
 
 APICliente/APICliente.Infra.CrossCutting/obj
 APICliente/APICliente.Infra.CrossCutting/bin
+
+APICliente/APICliente.Infra.CrossCutting.Adapter/obj
+APICliente/APICliente.Infra.CrossCutting.Adapter/bin
+
+APICliente/APICliente.Infra.CrossCutting.IoC/obj
+APICliente/APICliente.Infra.CrossCutting.IoC/bin

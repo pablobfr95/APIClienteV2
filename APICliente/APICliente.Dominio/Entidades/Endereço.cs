@@ -13,6 +13,32 @@ namespace APICliente.Dominio.Entidades
         public int ClienteId { get;private set; }
         public virtual Cliente Cliente { get; set; }
 
+        protected Endereço()
+        {
+
+        }
+
+        public Endereço(string logradouro, string bairro, string cidade, string estado, int clienteId)
+        {
+            ValidarParaInclusao(logradouro, bairro, cidade, estado, clienteId);
+            Logradouro = logradouro;
+            Bairro = bairro;
+            Cidade = cidade;
+            Estado = estado;
+            ClienteId = clienteId;
+        }
+
+        public Endereço(int id, string logradouro, string bairro, string cidade, string estado, int clienteId)
+        {
+            ValidarParaEdicao(id, logradouro, bairro, cidade, estado, clienteId);
+            Id = id;
+            Logradouro = logradouro;
+            Bairro = bairro;
+            Cidade = cidade;
+            Estado = estado;
+            ClienteId = clienteId;
+        }
+
         private void ValidarParaInclusao(string logradouro, string  bairro, string cidade, string estado, int clienteId)
         {
             if (string.IsNullOrEmpty(logradouro) || logradouro.Trim().Length > 50) throw new ArgumentException("Logradouro é obrigatório e tamanho máximo de 50 caracteres !");

@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\APICliente.Infra.CrossCutting\APICliente.Infra.CrossCutting.IoC.csproj" />
     <ProjectReference Include="..\APICliente.Infra.Data\APICliente.Infra.Data.csproj" />
   </ItemGroup>
 

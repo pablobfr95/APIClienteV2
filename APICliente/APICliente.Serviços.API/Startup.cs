@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using APICliente.Infra.CrossCutting.IoC;
 using APICliente.Infra.Data.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -32,6 +33,8 @@ namespace APICliente.Serviços.API
                options.UseSqlServer(
                    Configuration.GetConnectionString("DefaultConnection"))
                    );
+
+            InjetorDependencia.Registrar(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

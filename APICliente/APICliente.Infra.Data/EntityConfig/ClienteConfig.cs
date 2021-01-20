@@ -18,7 +18,7 @@ namespace APICliente.Infra.Data.EntityConfig
             builder.Property(c => c.Nome).HasMaxLength(30).IsRequired();
 
             builder.Property(c => c.Cpf).HasMaxLength(11).IsRequired();
-            builder.Property(c => c.DataNascimento).IsRequired();
+
         }
     }
 }

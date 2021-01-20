@@ -1,8 +1,19 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20210120222511_Relacionamento_Cliente_Endereco_2.cs" />
+    <Compile Remove="Migrations\20210120222511_Relacionamento_Cliente_Endereco_2.Designer.cs" />
+    <Compile Remove="Migrations\20210120222642_Relacionamento_Cliente_Endereco_2.cs" />
+    <Compile Remove="Migrations\20210120222642_Relacionamento_Cliente_Endereco_2.Designer.cs" />
+    <Compile Remove="Migrations\20210120222906_Relacionamento_Cliente_Endereco_2.cs" />
+    <Compile Remove="Migrations\20210120222906_Relacionamento_Cliente_Endereco_2.Designer.cs" />
+    <Compile Remove="Migrations\20210120223340_Relacionamento_Cliente_Endereco_2.cs" />
+    <Compile Remove="Migrations\20210120223340_Relacionamento_Cliente_Endereco_2.Designer.cs" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.0" />

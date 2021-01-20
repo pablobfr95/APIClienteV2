@@ -18,6 +18,7 @@ namespace APICliente.Dominio.Entidades
                     return DateTime.Now.Year - this.DataNascimento.Year;
             }
         }
+        public virtual IEnumerable<Endereço> Endereços { get; set; }
         
 
         protected Cliente()
@@ -47,7 +48,7 @@ namespace APICliente.Dominio.Entidades
         {
             if (nome.Trim().Length > 30 || nome.Trim().Length == 0) throw new ArgumentException("Nome é obrigatório e possui tamanho máximo de 30 caracteres !");
             if (!ValidadorCPF.CpfValido(cpf)) throw new ArgumentException("Cpf Inválido !");
-            if (dataNascimento == DateTime.MinValue || dataNascimento == DateTime.Now) throw new ArgumentException("Data de nascimento é obrigatório !");
+            if (dataNascimento == DateTime.MinValue || dataNascimento >= DateTime.Now) throw new ArgumentException("Data de nascimento é obrigatório !");
            
         }
 

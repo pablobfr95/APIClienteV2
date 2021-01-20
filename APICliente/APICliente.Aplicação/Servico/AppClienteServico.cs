@@ -12,29 +12,42 @@ namespace APICliente.Aplicação.Servico
     {
         private readonly IClienteServico _clienteServico;
         private readonly IMapperCliente _mapper;
+
+        public AppClienteServico(IClienteServico clienteServico, IMapperCliente mapper)
+        {
+            _clienteServico = clienteServico;
+            _mapper = mapper;
+        }
+
         public void Adicionar(ClienteDTO clienteDTO)
         {
-            throw new NotImplementedException();
+            var cliente = _mapper.MapperParaCriarEntidade(clienteDTO);
+            _clienteServico.Adicionar(cliente);
         }
 
         public void Atualizar(ClienteDTO clienteDTO)
         {
-            throw new NotImplementedException();
+            var cliente = _mapper.MapperParaEditarouExcluirEntidade(clienteDTO);
+            _clienteServico.Atualizar(cliente);
         }
 
         public ClienteDTO BuscarPorId(int id)
         {
-            throw new NotImplementedException();
+            var cliente = _clienteServico.BuscarPorId(id);
+            if (cliente == null) return null;
+            return _mapper.MapperParaVisualizarClienteDTO(cliente);
         }
 
         public IEnumerable<ClienteDTO> BuscarTodos()
         {
-            throw new NotImplementedException();
+            var clientes =_clienteServico.BuscarTodos();
+            return _mapper.MapperParaVisualizarClientesDTO(clientes);
         }
 
         public void Excluir(ClienteDTO clienteDTO)
         {
-            throw new NotImplementedException();
+            var cliente = _mapper.MapperParaEditarouExcluirEntidade(clienteDTO);
+            _clienteServico.Excluir(cliente);
         }
     }
 }

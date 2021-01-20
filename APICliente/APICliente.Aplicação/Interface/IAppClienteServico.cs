@@ -5,7 +5,7 @@ using System.Text;
 
 namespace APICliente.Aplicação.Interface
 {
-    public interface IAppServicoCliente
+    public interface IAppClienteServico
     {
         void Adicionar(ClienteDTO clienteDTO);
         void Atualizar(ClienteDTO clienteDTO);

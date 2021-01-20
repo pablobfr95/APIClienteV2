@@ -4,4 +4,14 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\APICliente.Aplicacao.DTO\APICliente.Aplicacao.DTO.csproj" />
+    <ProjectReference Include="..\APICliente.Dominio\APICliente.Dominio.csproj" />
+    <ProjectReference Include="..\APICliente.Infra.CrossCutting.Adapter\APICliente.Infra.CrossCutting.Adapter.csproj" />
+  </ItemGroup>
+
 </Project>

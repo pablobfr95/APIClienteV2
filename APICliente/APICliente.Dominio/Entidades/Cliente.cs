@@ -29,7 +29,7 @@ namespace APICliente.Dominio.Entidades
         {
             ValidarParaInclusao(nome, cpf, dataNascimento);
             Nome = nome;
-            Cpf = cpf;
+            Cpf = cpf.Trim().Replace(",","").Replace(".","").Replace("-","");
             DataNascimento = dataNascimento;
         }
 
@@ -38,7 +38,7 @@ namespace APICliente.Dominio.Entidades
             ValidarParaEdicao(id, nome, cpf, dataNascimento);
             Id = id;
             Nome = nome;
-            Cpf = cpf;
+            Cpf = cpf.Trim().Replace(",", "").Replace(".", "").Replace("-", "");
             DataNascimento = dataNascimento;
         }
 

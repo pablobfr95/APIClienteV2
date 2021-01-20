@@ -8,8 +8,8 @@ namespace APICliente.Infra.CrossCutting.Adapter.Interface
 {
     public interface IMapperEndereco
     {
-        Endereço MapperParaCriarEndereco(EnderecoDTO enderecoDTO);
-        Endereço MapperParaEditarEndereco(EnderecoDTO enderecoDTO);
+        Endereço MapperParaCriarEntidade(EnderecoDTO enderecoDTO);
+        Endereço MapperParaEditarouExcluirEntidade(EnderecoDTO enderecoDTO);
         EnderecoDTO MapperParaVisualizarEnderecoDTO(Endereço endereco);
         IEnumerable<EnderecoDTO> MapperParaVisualizarEnderecosDTO(IEnumerable<Endereço> enderecos);
 

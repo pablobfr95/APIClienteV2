@@ -17,7 +17,7 @@ namespace APICliente.Infra.CrossCutting.Adapter.Mappper
         }
 
 
-        public Cliente MapperParaEditarEntidade(ClienteDTO clienteDTO)
+        public Cliente MapperParaEditarouExcluirEntidade(ClienteDTO clienteDTO)
         {
             return new Cliente(clienteDTO.Id, clienteDTO.Nome, clienteDTO.Cpf, clienteDTO.DataNascimento);
         }

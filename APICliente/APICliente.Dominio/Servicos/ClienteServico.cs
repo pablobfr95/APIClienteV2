@@ -10,6 +10,12 @@ namespace APICliente.Dominio.Servicos
     public class ClienteServico : ServicoBase<Cliente>, IClienteServico
     {
         private readonly IClienteRepositorio _repositorio;
-       
+
+        public ClienteServico(IClienteRepositorio repositorio)
+            : base(repositorio)
+        {
+            _repositorio = repositorio;
+        }
+
     }
 }

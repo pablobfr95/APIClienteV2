@@ -10,12 +10,12 @@ namespace APICliente.Infra.CrossCutting.Adapter.Mappper
     public class MapperEndereco : IMapperEndereco
     {
         List<EnderecoDTO> enderecoDTOs = new List<EnderecoDTO>();
-        public Endereço MapperParaCriarEndereco(EnderecoDTO enderecoDTO)
+        public Endereço MapperParaCriarEntidade(EnderecoDTO enderecoDTO)
         {
             return new Endereço(enderecoDTO.Logradouro, enderecoDTO.Bairro, enderecoDTO.Cidade, enderecoDTO.Estado, enderecoDTO.ClienteId);
         }
 
-        public Endereço MapperParaEditarEndereco(EnderecoDTO enderecoDTO)
+        public Endereço MapperParaEditarouExcluirEntidade(EnderecoDTO enderecoDTO)
         {
             return new Endereço(enderecoDTO.Id, enderecoDTO.Logradouro, enderecoDTO.Bairro, enderecoDTO.Cidade, enderecoDTO.Estado, enderecoDTO.ClienteId);
         }

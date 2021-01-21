@@ -77,6 +77,8 @@ namespace APICliente.Serviços.API
 
             app.UseAuthorization();
 
+            UpdateDatabase(app);
+
             app.UseSwagger();
             app.UseSwaggerUI(c => {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "API Clientes V1");
@@ -87,6 +89,20 @@ namespace APICliente.Serviços.API
             {
                 endpoints.MapControllers();
             });
+        }
+
+        private static void UpdateDatabase(IApplicationBuilder app)
+        {
+            using (var serviceScope = app.ApplicationServices
+                .GetRequiredService<IServiceScopeFactory>()
+                .CreateScope())
+            {
+                using (var context = serviceScope.ServiceProvider.GetService<APIClienteContext>())
+                {
+                    context.Database.Migrate();
+                }
+
+            }
         }
     }
 }

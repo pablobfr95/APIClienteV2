@@ -66,13 +66,13 @@ namespace APICliente.Serviços.API
                 c.SwaggerDoc("v1",
                     new OpenApiInfo
                     {
-                        Title = "Comentários",
-                        Version = "v3.0",
-                        Description = "Exemplo de API REST criada com o ASP.NET Core 3.0 para cadastramento de comentários",
+                        Title = "API Cliente",
+                        Version = "v1",
+                        Description = "Exemplo de API REST criada com o ASP.NET Core 3.0 para cadastramento de clientes e endereços",
                         Contact = new OpenApiContact
                         {
-                            Name = "Renato Groffe",
-                            Url = new Uri("https://github.com/renatogroffe")
+                            Name = "Pablo Rodrigues",
+                            Url = new Uri("https://www.linkedin.com/in/pablo-rodrigues-de-oliveira-1281b2156/")
                         }
                     });
             });
@@ -94,6 +94,7 @@ namespace APICliente.Serviços.API
             app.UseSwagger();
             app.UseSwaggerUI(c => {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Indicadores Econômicos V1");
+                c.RoutePrefix = string.Empty;
             });
 
             app.UseEndpoints(endpoints =>

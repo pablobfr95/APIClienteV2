@@ -41,28 +41,9 @@ namespace APICliente.Serviços.API
 
             InjetorDependencia.Registrar(services);
 
-            //services.AddSwaggerGen(options =>
-            //{
-            //    options.ExampleFilters();
-            //    options.EnableAnnotations();
-            //    options.SwaggerDoc(
-            //        "v1",
-            //        new OpenApiInfo
-            //        {
-            //            Version = "v1",
-            //            Title = "API Cliente",
-            //            Description = "Api de Clientes e Endereços"
-            //        });
-
-            //    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-            //    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-            //    options.IncludeXmlComments(xmlPath);
-            //});
-
-            // services.AddSwaggerExamplesFromAssemblies(Assembly.GetEntryAssembly());
-
             services.AddSwaggerGen(c => {
-
+                c.ExampleFilters();
+                c.EnableAnnotations();
                 c.SwaggerDoc("v1",
                     new OpenApiInfo
                     {
@@ -75,11 +56,16 @@ namespace APICliente.Serviços.API
                             Url = new Uri("https://www.linkedin.com/in/pablo-rodrigues-de-oliveira-1281b2156/")
                         }
                     });
+
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
             });
 
-        }
+            services.AddSwaggerExamplesFromAssemblies(Assembly.GetEntryAssembly());
 
-            // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        }
+          
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -93,7 +79,7 @@ namespace APICliente.Serviços.API
 
             app.UseSwagger();
             app.UseSwaggerUI(c => {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Indicadores Econômicos V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "API Clientes V1");
                 c.RoutePrefix = string.Empty;
             });
 

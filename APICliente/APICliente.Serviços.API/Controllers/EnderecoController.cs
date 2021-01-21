@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using APICliente.Aplicação.DTO;
 using APICliente.Aplicação.Interface;
+using APICliente.Serviços.API.SwaggerExemplos;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
+using Swashbuckle.AspNetCore.Filters;
 
 namespace APICliente.Serviços.API.Controllers
 {
@@ -20,7 +24,13 @@ namespace APICliente.Serviços.API.Controllers
             _appEnderecoServico = appEnderecoServico;
         }
 
+        /// <summary>
+        /// Buscar endereço por id
+        /// </summary>
+        /// <response code="404">Endereço não encontrado !</response>
         [HttpGet("BuscarPorId")]
+        [SwaggerResponse((int)HttpStatusCode.OK, "Endereço Encontrado !", typeof(EnderecoDTO))]
+        [SwaggerResponse((int)HttpStatusCode.InternalServerError, "Erro interno do servidor  !")]
         public IActionResult BuscarPorId(int id)
         {
             try
@@ -35,13 +45,20 @@ namespace APICliente.Serviços.API.Controllers
             }
         }
 
+
+        /// <summary>
+        /// Buscar todos os endereços
+        /// </summary>
         [HttpGet("Listar")]
+        [SwaggerResponse((int)HttpStatusCode.OK, "Endereços encontrados !", typeof(List<EnderecoDTO>))]
+        [SwaggerResponse((int)HttpStatusCode.NoContent, "Não possui nenhum Endereço !")]
+        [SwaggerResponse((int)HttpStatusCode.InternalServerError, "Erro interno do servidor  !")]
         public IActionResult Listar()
         {
             try
             {
                 var enderecos = _appEnderecoServico.BuscarTodos();
-                if (enderecos.Count() == 1) return NoContent();
+                if (enderecos.Count() == 0) return NoContent();
                 return new JsonResult(enderecos);
             }
             catch (Exception ex)
@@ -50,7 +67,14 @@ namespace APICliente.Serviços.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Criar Endereço
+        /// </summary>
+        /// <response code="400">Dados Inválidos !</response>
         [HttpPost("Criar")]
+        [SwaggerRequestExample(typeof(EnderecoDTO), typeof(CriarEnderecoExemploModelSwagger))]
+        [SwaggerResponse((int)HttpStatusCode.OK, "Endereço criado com sucesso !")]
+        [SwaggerResponse((int)HttpStatusCode.InternalServerError, "Erro interno do servidor  !")]
         public IActionResult Criar([FromBody]EnderecoDTO endereco)
         {
             try
@@ -69,7 +93,14 @@ namespace APICliente.Serviços.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Editar Endereço
+        /// </summary>
+        /// <response code="400">Dados Inválidos !</response>
+        /// <response code="404">Endereço não encontrado !</response>
         [HttpPut("Editar")]
+        [SwaggerResponse((int)HttpStatusCode.OK, "Endereço editado com sucesso !")]
+        [SwaggerResponse((int)HttpStatusCode.InternalServerError, "Erro interno do servidor  !")]
         public IActionResult Editar([FromBody]EnderecoDTO endereco)
         {
             try
@@ -91,7 +122,14 @@ namespace APICliente.Serviços.API.Controllers
                 return StatusCode(500, ex.Message);
             }
         }
+
+        /// <summary>
+        /// Excluir Endereço
+        /// </summary>
+        /// <response code="404">Endereço não encontrado !</response>
         [HttpDelete("Excluir")]
+        [SwaggerResponse((int)HttpStatusCode.OK, "Endereço excluído com sucesso !")]
+        [SwaggerResponse((int)HttpStatusCode.InternalServerError, "Erro interno do servidor  !")]
         public IActionResult Excluir(int id)
         {
             try

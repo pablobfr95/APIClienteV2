@@ -35,7 +35,7 @@ namespace APICliente.Infra.CrossCutting.Adapter.Mappper
                     Id = endereco.Cliente.Id,
                     Nome = endereco.Cliente.Nome,
                     Cpf = endereco.Cliente.Cpf,
-                    DataNascimento = endereco.Cliente.DataNascimento,
+                    DataNascimento = endereco.Cliente.DataNascimento.ToShortDateString(),
                     Idade = endereco.Cliente.Idade
                 }
             };
@@ -58,7 +58,7 @@ namespace APICliente.Infra.CrossCutting.Adapter.Mappper
                         Id = item.Cliente.Id,
                         Nome = item.Cliente.Nome,
                         Cpf = item.Cliente.Cpf,
-                        DataNascimento = item.Cliente.DataNascimento,
+                        DataNascimento = item.Cliente.DataNascimento.ToShortDateString(),
                         Idade = item.Cliente.Idade
                     }
                 };

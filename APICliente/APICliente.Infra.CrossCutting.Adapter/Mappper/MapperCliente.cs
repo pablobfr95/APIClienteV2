@@ -13,13 +13,13 @@ namespace APICliente.Infra.CrossCutting.Adapter.Mappper
 
         public Cliente MapperParaCriarEntidade(ClienteDTO clienteDTO)
         {
-            return new Cliente(clienteDTO.Nome, clienteDTO.Cpf, clienteDTO.DataNascimento);
+            return new Cliente(clienteDTO.Nome, clienteDTO.Cpf, Convert.ToDateTime(clienteDTO.DataNascimento));
         }
 
 
         public Cliente MapperParaEditarouExcluirEntidade(ClienteDTO clienteDTO)
         {
-            return new Cliente(clienteDTO.Id, clienteDTO.Nome, clienteDTO.Cpf, clienteDTO.DataNascimento);
+            return new Cliente(clienteDTO.Id, clienteDTO.Nome, clienteDTO.Cpf, Convert.ToDateTime(clienteDTO.DataNascimento));
         }
 
         public ClienteDTO MapperParaVisualizarClienteDTO(Cliente cliente)
@@ -29,7 +29,7 @@ namespace APICliente.Infra.CrossCutting.Adapter.Mappper
                 Id = cliente.Id,
                 Nome = cliente.Nome,
                 Cpf = cliente.Cpf,
-                DataNascimento = cliente.DataNascimento,
+                DataNascimento = cliente.DataNascimento.ToShortDateString(),
                 Idade = cliente.Idade,
             };
         }
@@ -43,7 +43,7 @@ namespace APICliente.Infra.CrossCutting.Adapter.Mappper
                     Id = item.Id,
                     Nome = item.Nome,
                     Cpf = item.Cpf,
-                    DataNascimento = item.DataNascimento,
+                    DataNascimento = item.DataNascimento.ToShortDateString(),
                     Idade = item.Idade
                 };
 

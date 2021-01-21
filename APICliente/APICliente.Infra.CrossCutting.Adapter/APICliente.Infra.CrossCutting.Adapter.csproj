@@ -4,6 +4,15 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\APICliente.Infra.CrossCutting.Adapter.xml</DocumentationFile>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="6.0.1" />
+  </ItemGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\APICliente.Aplicacao.DTO\APICliente.Aplicacao.DTO.csproj" />
     <ProjectReference Include="..\APICliente.Dominio\APICliente.Dominio.csproj" />

@@ -16,13 +16,13 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.PlatformAbstractions" Version="1.1.0" />
-    <PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="6.0.1" />
     <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="5.6.3" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="5.6.3" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="5.6.3" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\APICliente.Infra.CrossCutting.Adapter\APICliente.Infra.CrossCutting.Adapter.csproj" />
     <ProjectReference Include="..\APICliente.Infra.CrossCutting\APICliente.Infra.CrossCutting.IoC.csproj" />
     <ProjectReference Include="..\APICliente.Infra.Data\APICliente.Infra.Data.csproj" />
   </ItemGroup>

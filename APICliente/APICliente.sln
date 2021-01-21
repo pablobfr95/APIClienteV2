@@ -15,19 +15,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05 - Infra", "05 - Infra", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{2E101712-04E9-4406-8AA5-75DDA73378F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APICliente.Dominio", "APICliente.Dominio\APICliente.Dominio.csproj", "{2C24F950-6E3C-4B76-AA42-16822F9F19BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APICliente.Dominio", "APICliente.Dominio\APICliente.Dominio.csproj", "{2C24F950-6E3C-4B76-AA42-16822F9F19BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APICliente.Infra.Data", "APICliente.Infra.Data\APICliente.Infra.Data.csproj", "{5CAE669A-64DB-4B01-BBB2-E5BD86D5513B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APICliente.Infra.Data", "APICliente.Infra.Data\APICliente.Infra.Data.csproj", "{5CAE669A-64DB-4B01-BBB2-E5BD86D5513B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APICliente.Infra.CrossCutting.IoC", "APICliente.Infra.CrossCutting\APICliente.Infra.CrossCutting.IoC.csproj", "{FB7E3081-322E-4AF9-ACCE-7A9801152012}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APICliente.Infra.CrossCutting.IoC", "APICliente.Infra.CrossCutting\APICliente.Infra.CrossCutting.IoC.csproj", "{FB7E3081-322E-4AF9-ACCE-7A9801152012}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APICliente.Aplicação", "APICliente.Aplicação\APICliente.Aplicação.csproj", "{DADD51BD-B409-449D-A6B5-F9135ECCDD40}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APICliente.Aplicação", "APICliente.Aplicação\APICliente.Aplicação.csproj", "{DADD51BD-B409-449D-A6B5-F9135ECCDD40}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APICliente.Serviços.API", "APICliente.Serviços.API\APICliente.Serviços.API.csproj", "{3BEA30AB-6AE2-4A05-AD83-96932E8C7330}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APICliente.Serviços.API", "APICliente.Serviços.API\APICliente.Serviços.API.csproj", "{3BEA30AB-6AE2-4A05-AD83-96932E8C7330}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APICliente.Infra.CrossCutting.Adapter", "APICliente.Infra.CrossCutting.Adapter\APICliente.Infra.CrossCutting.Adapter.csproj", "{608E970F-FAF8-4749-A3BC-9EDC7E1F246F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APICliente.Infra.CrossCutting.Adapter", "APICliente.Infra.CrossCutting.Adapter\APICliente.Infra.CrossCutting.Adapter.csproj", "{608E970F-FAF8-4749-A3BC-9EDC7E1F246F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APICliente.Aplicacao.DTO", "APICliente.Aplicacao.DTO\APICliente.Aplicacao.DTO.csproj", "{21CA26FA-66B8-4238-84E5-3D8D55F217ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APICliente.Aplicacao.DTO", "APICliente.Aplicacao.DTO\APICliente.Aplicacao.DTO.csproj", "{21CA26FA-66B8-4238-84E5-3D8D55F217ED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{4104A17B-FB18-46E4-ADA7-F26E4FCA0A9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APICliente.Teste", "APICliente.Teste\APICliente.Teste.csproj", "{98D1E8D2-2476-41F1-97D6-AC91CA635665}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +67,10 @@ Global
 		{21CA26FA-66B8-4238-84E5-3D8D55F217ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21CA26FA-66B8-4238-84E5-3D8D55F217ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21CA26FA-66B8-4238-84E5-3D8D55F217ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98D1E8D2-2476-41F1-97D6-AC91CA635665}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98D1E8D2-2476-41F1-97D6-AC91CA635665}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98D1E8D2-2476-41F1-97D6-AC91CA635665}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98D1E8D2-2476-41F1-97D6-AC91CA635665}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,6 +88,7 @@ Global
 		{3BEA30AB-6AE2-4A05-AD83-96932E8C7330} = {4953BB6C-1801-4F63-A774-0DA4B34C2936}
 		{608E970F-FAF8-4749-A3BC-9EDC7E1F246F} = {AC779942-C81D-4CBF-8BE2-BDA60935A226}
 		{21CA26FA-66B8-4238-84E5-3D8D55F217ED} = {06F604BF-5B66-4ECC-A0FF-0C42613E5F86}
+		{98D1E8D2-2476-41F1-97D6-AC91CA635665} = {4104A17B-FB18-46E4-ADA7-F26E4FCA0A9D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A26308E7-E22D-4B75-AE4F-C84A56E363F3}

@@ -45,7 +45,7 @@ namespace APICliente.Dominio.Entidades
             if (string.IsNullOrEmpty(bairro) || bairro.Trim().Length > 40) throw new ArgumentException("Bairro é obrigatório e tamanho máximo de 50 caracteres !");
             if (string.IsNullOrEmpty(cidade) || cidade.Trim().Length > 40) throw new ArgumentException("Cidade é obrigatório e tamanho máximo de 40 caracteres !");
             if (string.IsNullOrEmpty(estado) || estado.Trim().Length > 40) throw new ArgumentException("Estado é obrigatório e tamanho máximo de 40 caracteres !");
-            if (clienteId == 0 ) throw new ArgumentNullException("Informe um cliente para poder adicionar um endereço !");
+            if (clienteId == 0 ) throw new ArgumentException("Informe um cliente para poder adicionar um endereço !");
         }
 
         private void ValidarParaEdicao(int id,string logradouro, string bairro, string cidade, string estado, int clienteId)
@@ -55,7 +55,7 @@ namespace APICliente.Dominio.Entidades
             if (string.IsNullOrEmpty(bairro) || bairro.Trim().Length > 40) throw new ArgumentException("Bairro é obrigatório e tamanho máximo de 50 caracteres !");
             if (string.IsNullOrEmpty(cidade) || cidade.Trim().Length > 40) throw new ArgumentException("Cidade é obrigatório e tamanho máximo de 40 caracteres !");
             if (string.IsNullOrEmpty(estado) || estado.Trim().Length > 40) throw new ArgumentException("Estado é obrigatório e tamanho máximo de 40 caracteres !");
-            if (clienteId == 0) throw new ArgumentNullException("Informe um cliente para poder adicionar um endereço !");
+            if (clienteId == 0) throw new ArgumentException("Informe um cliente para poder adicionar um endereço !");
         }
     }
 }

@@ -75,3 +75,7 @@ APICliente/APICliente.Infra.CrossCutting.IoC/obj
 APICliente/APICliente.Infra.CrossCutting.IoC/bin
 APICliente/APICliente.Aplicacao.DTO/obj/
 APICliente/APICliente.Aplicacao.DTO/bin/
+APICliente/APICliente.Teste/bin/
+APICliente/APICliente.Teste/obj/APICliente.Teste.csproj.nuget.dgspec.json
+APICliente/APICliente.Teste/obj/APICliente.Teste.csproj.nuget.g.props
+APICliente/APICliente.Teste/obj/

@@ -29,7 +29,15 @@ namespace APICliente.Infra.CrossCutting.Adapter.Mappper
                 Bairro = endereco.Bairro,
                 Cidade = endereco.Cidade,
                 Estado = endereco.Estado,
-                ClienteId = endereco.ClienteId
+                ClienteId = endereco.ClienteId,
+                Cliente = new ClienteDTO
+                {
+                    Id = endereco.Cliente.Id,
+                    Nome = endereco.Cliente.Nome,
+                    Cpf = endereco.Cliente.Cpf,
+                    DataNascimento = endereco.Cliente.DataNascimento,
+                    Idade = endereco.Cliente.Idade
+                }
             };
         }
 
@@ -44,7 +52,15 @@ namespace APICliente.Infra.CrossCutting.Adapter.Mappper
                     Bairro = item.Bairro,
                     Cidade = item.Cidade,
                     Estado = item.Estado,
-                    ClienteId = item.ClienteId
+                    ClienteId = item.ClienteId,
+                    Cliente = new ClienteDTO
+                    {
+                        Id = item.Cliente.Id,
+                        Nome = item.Cliente.Nome,
+                        Cpf = item.Cliente.Cpf,
+                        DataNascimento = item.Cliente.DataNascimento,
+                        Idade = item.Cliente.Idade
+                    }
                 };
 
                 enderecoDTOs.Add(enderecoDTO);

@@ -20,7 +20,12 @@ namespace APICliente.Infra.Data.Repositorio
 
         public override Cliente BuscarPorId(int id)
         {
-            return _context.Cliente.Include(c => c.Endereços).FirstOrDefault(c => c.Id == id);
+            return _context.Cliente.Include(c => c.Endereços).AsNoTracking().FirstOrDefault(c => c.Id == id);
+        }
+
+        public override IEnumerable<Cliente> BuscarTodos()
+        {
+            return _context.Cliente.Include(c => c.Endereços).AsNoTracking();
         }
     }
 }

@@ -23,7 +23,7 @@ namespace APICliente.Infra.Data.EntityConfig
 
             builder.Property(e => e.Estado).HasMaxLength(40).IsRequired();
 
-            builder.HasOne(e => e.Cliente).WithMany().HasForeignKey(e => e.ClienteId).OnDelete(DeleteBehavior.Cascade).IsRequired();
+            builder.HasOne(e => e.Cliente).WithMany(c => c.Endereços).HasForeignKey(e => e.ClienteId).OnDelete(DeleteBehavior.Cascade).IsRequired();
         }
     }
 }

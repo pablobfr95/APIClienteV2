@@ -26,7 +26,7 @@ namespace APICliente.Serviços.API.Controllers
             {
                 var clientes = _appClienteServico.BuscarTodos();
                 if (clientes.Count() == 0) return NoContent();
-                return Ok();
+                return Ok(clientes);
             }
             catch (Exception ex)
             {
@@ -85,11 +85,28 @@ namespace APICliente.Serviços.API.Controllers
             }
         }
 
-        //[HttpPut("Editar)]
-        //public IActionResult Editar([FromBody] ClienteDTO cliente)
-        //{
-
-        //}
+        [HttpPut("Editar")]
+        public IActionResult Editar([FromBody] ClienteDTO cliente)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    if (_appClienteServico.BuscarPorId(cliente.Id) == null) return NotFound("Cliente não encontrado !");
+                    _appClienteServico.Atualizar(cliente);
+                }
+                else
+                {
+                    var errors = ModelState.Values.SelectMany(e => e.Errors);
+                    return BadRequest(errors);
+                }
+                return Ok("Cliente Atualizado");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
 
 
 

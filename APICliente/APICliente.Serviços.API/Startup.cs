@@ -31,7 +31,7 @@ namespace APICliente.Serviços.API
 
             services.AddDbContext<APIClienteContext>(options =>
                options.UseSqlServer(
-                   Configuration.GetConnectionString("DefaultConnection"))
+                   Configuration.GetConnectionString("DefaultConnection")), ServiceLifetime.Transient
                    );
 
             InjetorDependencia.Registrar(services);

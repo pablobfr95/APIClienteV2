@@ -32,10 +32,10 @@ namespace APICliente.Infra.Data.Repositorio
             _context.SaveChanges();
         }
 
-        public virtual T BuscarPorId(int id) => _context.Set<T>().FirstOrDefault(t => t.Id == id);
+        public virtual T BuscarPorId(int id) => _context.Set<T>().AsNoTracking().FirstOrDefault(t => t.Id == id);
 
 
-        public virtual IEnumerable<T> BuscarTodos() => _context.Set<T>().ToList();
+        public virtual IEnumerable<T> BuscarTodos() => _context.Set<T>().AsNoTracking().ToList();
         
 
         public virtual void Dispose()

@@ -17,5 +17,6 @@ namespace APICliente.Aplicação.DTO
         [Required]
         public DateTime DataNascimento { get; set; }
         public int Idade { get; set; }
+        public virtual IEnumerable<EnderecoDTO> EndereçosDTO { get; set; }
     }
 }

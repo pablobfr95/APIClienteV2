@@ -30,7 +30,7 @@ namespace APICliente.Infra.CrossCutting.Adapter.Mappper
                 Nome = cliente.Nome,
                 Cpf = cliente.Cpf,
                 DataNascimento = cliente.DataNascimento,
-                Idade = cliente.Idade
+                Idade = cliente.Idade,
             };
         }
 

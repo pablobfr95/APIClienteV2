@@ -22,5 +22,6 @@ namespace APICliente.Aplicação.DTO
         public string Estado { get; set; }
         [Required(ErrorMessage = "Informe um cliente para poder adicionar um endereço !")]
         public int ClienteId { get; set; }
+        public virtual ClienteDTO Cliente { get; set; }
     }
 }
